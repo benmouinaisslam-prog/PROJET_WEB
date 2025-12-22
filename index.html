@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Role: Entry HTML for TechStore SPA. Objective: Provide the static shell, fixed navbar, and the root mount point (#app). All scripts are loaded externally as modules; HTML contains no inline scripts. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore — Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">TechStore</div>
+        <nav class="nav">
+            <button class="nav-item active" data-tab="dashboard">Dashboard</button>
+            <button class="nav-item" data-tab="users">Users</button>
+            <button class="nav-item" data-tab="products">Products</button>
+            <button class="nav-item" data-tab="analytics">Analytics</button>
+            <button class="nav-item" data-tab="settings">Settings</button>
+        </nav>
+    </header>
+
+    <main id="app" class="app"></main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="./script/main.js"></script>
+</body>
+</html>
