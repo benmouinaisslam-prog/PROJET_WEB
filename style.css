@@ -1,0 +1,83 @@
+/* Role: Stylesheet for TechStore SPA. Objective: Provide responsive admin UI, layout, cards, tables, modals, and utility styles. */
+:root{
+  --accent:#4f46e5;
+  --muted:#6b7280;
+  --bg:#0f172a;
+  --card:#0b1220;
+  --surface:#071021;
+  --success:#10b981;
+  --danger:#ef4444;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:#e6eef8;background:linear-gradient(180deg,#07121b 0%, #041226 100%)}
+
+/* Topbar */
+.topbar{position:fixed;left:0;right:0;top:0;height:64px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:space-between;padding:0 20px;backdrop-filter: blur(6px);z-index:40;border-bottom:1px solid rgba(255,255,255,0.03)}
+.brand{font-weight:700;color:var(--accent);font-size:18px}
+.nav{display:flex;gap:8px}
+.nav-item{background:transparent;border:0;padding:8px 12px;border-radius:8px;color:var(--muted);cursor:pointer}
+.nav-item.active{background:linear-gradient(90deg, rgba(79,70,229,0.15), rgba(79,70,229,0.08));color:#fff;box-shadow:0 6px 18px rgba(79,70,229,0.06)}
+.nav-item:focus{outline:2px solid rgba(79,70,229,0.12)}
+
+/* App container */
+.app{padding:90px 24px 40px;max-width:1200px;margin:0 auto}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.col-4{grid-column:span 4}
+.col-8{grid-column:span 8}
+.col-12{grid-column:span 12}
+
+/* Cards */
+.card{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 4px 18px rgba(2,6,23,0.6)}
+.stat{display:flex;align-items:center;justify-content:space-between}
+.stat .meta{color:var(--muted);font-size:13px}
+.stat .value{font-size:20px;font-weight:700}
+.stat-value{font-size:20px;font-weight:700}
+.cards{display:flex;gap:12px}
+
+/* Table */
+.table{width:100%;border-collapse:collapse;margin-top:12px}
+.table th, .table td{padding:10px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.02);font-size:14px}
+.table th{color:var(--muted);font-weight:600}
+.row-actions{display:flex;gap:8px}
+.btn{background:var(--glass);border:1px solid rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;color:#e6eef8;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#7c3aed);box-shadow:0 6px 16px rgba(79,70,229,0.12)}
+.btn.danger{background:transparent;border:1px solid rgba(239,68,68,0.18);color:var(--danger)}
+
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;z-index:60}
+.modal{width:600px;max-width:92%;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.form-row{display:flex;gap:12px;margin-bottom:10px}
+.form-row .field{flex:1;display:flex;flex-direction:column}
+.input, textarea, select{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:8px;color:#e6eef8}
+.label{font-size:13px;color:var(--muted);margin-bottom:6px}
+.error{color:var(--danger);font-size:13px}
+
+/* Responsive */
+@media (max-width:900px){
+  .grid{grid-template-columns:repeat(6,1fr)}
+  .col-4{grid-column:span 3}
+  .col-8{grid-column:span 6}
+}
+@media (max-width:560px){
+  .topbar{padding:0 12px}
+  .nav{gap:6px}
+  .nav-item{padding:6px 8px;font-size:13px}
+  .cards{flex-direction:column}
+}
+
+/* Empty states */
+.empty{padding:28px;text-align:center;color:var(--muted)}
+
+/* Product thumbnail and cell alignment */
+.product-cell{display:flex;align-items:center;gap:10px}
+.product-thumb{width:48px;height:48px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+
+/* User avatar */
+.user-cell{display:flex;align-items:center;gap:10px}
+.avatar-thumb{width:40px;height:40px;object-fit:cover;border-radius:50%;border:1px solid rgba(255,255,255,0.03)}
+
+/* small helpers */
+.small{font-size:13px;color:var(--muted)

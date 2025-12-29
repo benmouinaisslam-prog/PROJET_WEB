@@ -15,9 +15,15 @@ This workspace contains the following important files:
 - `index.html` — Entry HTML for the SPA (tracked in git).
 - `style.css` — Styling for the dashboard (intentionally ignored by `.gitignore`).
 - `script/` — JavaScript modules for each tab (intentionally ignored by `.gitignore`).
-
+ - Demo Module 1 — Products CRUD
+	 - `module1.html` — Standalone page showing a focused Products CRUD demo for presentation.
+	 - `module1.css` — Styles for the demo page.
+	 - `module1.js` — JavaScript implementing full CRUD, search, sort, detail view, FakeStoreAPI import and LocalStorage persistence.
+Design
+ - The site uses a modern vanilla CSS design; Bootstrap was removed per project request. The file `bootstrap-overrides.css` is deprecated and kept empty to avoid accidental usage.
 Note about repository contents
 - Per project request, the repository is configured to push only `index.html`. The `style.css` and the `script/` folder are ignored by `.gitignore` to prevent them from being pushed.
+ - For presenting Module 1, `module1.html`, `module1.css` and `module1.js` are included in the repo so you can push and present only the focused module.
 - If you want the full working application to be available in the repository, remove `style.css` and `/script/` from `.gitignore` and commit them.
 
 Running locally
